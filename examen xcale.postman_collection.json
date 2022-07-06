@@ -1,0 +1,56 @@
+{
+	"info": {
+		"_postman_id": "560bb021-fce7-411c-af5a-2c1cd632d412",
+		"name": "examen xcale",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "group",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Amigos\",\r\n    \"contacts\":[{\r\n        \"name\":\"p\",\r\n        \"mobilPhone\":\"43324\"\r\n    }]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/whatsapp/group",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"whatsapp",
+						"group"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "simulate",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/whatsapp/simulate",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"whatsapp",
+						"simulate"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
