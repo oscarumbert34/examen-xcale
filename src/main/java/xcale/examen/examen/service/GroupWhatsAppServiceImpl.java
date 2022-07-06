@@ -13,9 +13,6 @@ import java.util.List;
 public class GroupWhatsAppServiceImpl implements GroupWhatsAppService {
     private GroupWhatsApp groupWhatsApp;
 
-    public GroupWhatsAppServiceImpl(GroupWhatsApp groupWhatsApp){
-        this.groupWhatsApp = groupWhatsApp;
-    }
     @Override
     public void create(String name, List<Contact> contacts) {
         groupWhatsApp = new GroupWhatsApp(name);

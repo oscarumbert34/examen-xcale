@@ -11,7 +11,6 @@ import java.util.List;
 @Getter
 @Setter
 public class GroupWhatsApp {
-
     private String name;
     private LinkedList<Message> messages;
     private List<Observer> contacts;

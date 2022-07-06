@@ -2,6 +2,11 @@ package xcale.examen.examen.service;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.junit.platform.commons.util.ReflectionUtils;
+import org.mockito.InjectMocks;
+import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.test.util.ReflectionTestUtils;
 import xcale.examen.examen.model.*;
 
 import java.util.Arrays;
@@ -9,9 +14,11 @@ import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+@ExtendWith(MockitoExtension.class)
 public class GroupWhatsAppServiceTest {
 
-    private GroupWhatsAppService groupWhatsAppService;
+    @InjectMocks
+    private GroupWhatsAppServiceImpl groupWhatsAppService;
     private List<Contact> contacts;
     private List<Message> messages;
 
@@ -32,7 +39,8 @@ public class GroupWhatsAppServiceTest {
         groupWhatsApp.add(contacts.get(1));
         groupWhatsApp.add(contacts.get(2));
 
-        groupWhatsAppService = new GroupWhatsAppServiceImpl(groupWhatsApp);
+        ReflectionTestUtils.setField(groupWhatsAppService, "groupWhatsApp", groupWhatsApp);
+
     }
 
     /**
