@@ -9,21 +9,21 @@ import java.util.Arrays;
 import java.util.List;
 
 @Service
-public class WhatsAppServiceImpl implements WhatsAppService{
+public class WhatsAppFacadeImpl implements WhatsAppFacade {
 
     private GroupWhatsAppService groupWhatsAppService;
     private MessageService messageService;
 
     @Autowired
-    public WhatsAppServiceImpl(GroupWhatsAppService groupWhatsAppService, MessageService messageService){
+    public WhatsAppFacadeImpl(GroupWhatsAppService groupWhatsAppService, MessageService messageService){
         this.groupWhatsAppService = groupWhatsAppService;
         this.messageService = messageService;
     }
 
 
     @Override
-    public void createGroup(List<Contact> contacts) {
-        groupWhatsAppService.create("Amigos",contacts);
+    public void createGroup(String name, List<Contact> contacts) {
+        groupWhatsAppService.create(name,contacts);
     }
 
     @Override
@@ -38,7 +38,7 @@ public class WhatsAppServiceImpl implements WhatsAppService{
                 Contact.builder().name("Claudio").mobilPhone("1155874541").build(),
                 Contact.builder().name("").mobilPhone("1166985474").build());
 
-        this.createGroup(contacts);
+        this.createGroup("Amigos",contacts);
 
         Message message = Message.builder().sender(contacts.get(0).getNameOrMobilPhone()).content("Hola").build();
         this.sendMessage(message);

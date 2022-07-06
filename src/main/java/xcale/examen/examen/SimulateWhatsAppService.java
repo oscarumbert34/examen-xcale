@@ -3,12 +3,12 @@ package xcale.examen.examen;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
-import xcale.examen.examen.service.WhatsAppService;
+import xcale.examen.examen.service.WhatsAppFacade;
 
 @Component
 public class SimulateWhatsAppService implements CommandLineRunner {
     @Autowired
-    private WhatsAppService whatsAppService;
+    private WhatsAppFacade whatsAppService;
 
 
     @Override
